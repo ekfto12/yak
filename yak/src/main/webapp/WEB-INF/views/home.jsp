@@ -36,7 +36,7 @@
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li class="active"><a href="index.html">Home</a></li>
 								<li><a href="about.html">Search</a></li>
-								<li><a href="services.html">이재원 소개</a></li>
+								<li><a href="services.html">홈페이지  소개</a></li>
 								<li><a href="blog.html">문의</a></li>
 								<li><a href="contact.html">Contact</a></li>
 							</ul>
@@ -127,12 +127,13 @@
 			<div class="row">
 				<div class="col">
 					<div class="domain_pricing_content">
+							<h1 style="text-align: center; padding-top: 30px;">가장 많이 검색된 의약품 Top 5</h1>
 						<ul class="d-flex flex-md-row flex-column align-items-center justify-content-md-between justify-content-center">
-							<li><a href="#"><span>.</span>com<span>$3.99</span></a></li>
-							<li><a href="#"><span>.</span>net<span>$1.99</span></a></li>
-							<li><a href="#"><span>.</span>org<span>$2.99</span></a></li>
-							<li><a href="#"><span>.</span>io<span>$3.99</span></a></li>
-							<li><a href="#"><span>.</span>info<span>$13.99</span></a></li>
+							<li><a href="#"><span>.</span>의약품<span>1</span></a></li>
+							<li><a href="#"><span>.</span>의약품<span>2</span></a></li>
+							<li><a href="#"><span>.</span>의약품<span>3</span></a></li>
+							<li><a href="#"><span>.</span>의약품<span>4</span></a></li>
+							<li><a href="#"><span>.</span>의약품<span>5</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -157,10 +158,11 @@
 				<!-- Why Item -->
 				<div class="col-lg-4">
 					<div class="icon_box_1 text-center">
-						<div class="icon_box_1_image ml-auto mr-auto"><img src="resources/images/icon_2.svg" alt="https://www.flaticon.com/authors/srip"></div>
-						<div class="icon_box_1_title">Server Protection</div>
+						<div class="icon_box_1_image ml-auto mr-auto"><img src="resources/images/ban1.png" alt="https://www.flaticon.com/authors/srip"></div>
+						<div class="icon_box_1_title">쉽고 정확한 의약품 검색</div>
 						<div class="icon_box_1_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat.</p>
+							<p>약팔이는 사용자들에게 쉽고 간편한 의약품 검색서비스를 <br>
+							제공함으로써 보다 편리하게 의약품을 검색하실 수 있습니다.</p>
 						</div>
 					</div>
 				</div>
@@ -168,10 +170,11 @@
 				<!-- Why Item -->
 				<div class="col-lg-4">
 					<div class="icon_box_1 text-center">
-						<div class="icon_box_1_image ml-auto mr-auto"><img src="resources/images/icon_3.svg" alt="https://www.flaticon.com/authors/srip"></div>
-						<div class="icon_box_1_title">CloudFlare Integration</div>
+						<div class="icon_box_1_image ml-auto mr-auto"><img src="resources/images/ban2.png" alt="https://www.flaticon.com/authors/srip"></div>
+						<div class="icon_box_1_title">의약품 즐겨찾기</div>
 						<div class="icon_box_1_text">
-							<p>Ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat. Aliquam erat.</p>
+							<p>자주 검색하는 의약품은 즐겨찾기를 사용하여<br>
+							빠르고 간편하게 찾아보실 수 있습니다.</p>
 						</div>
 					</div>
 				</div>
@@ -179,10 +182,11 @@
 				<!-- Why Item -->
 				<div class="col-lg-4">
 					<div class="icon_box_1 text-center">
-						<div class="icon_box_1_image ml-auto mr-auto"><img src="resources/images/icon_4.svg" alt="https://www.flaticon.com/authors/srip"></div>
-						<div class="icon_box_1_title">30 Day Money-back</div>
+						<div class="icon_box_1_image ml-auto mr-auto"><img src="resources/images/ban3.png" alt="https://www.flaticon.com/authors/srip"></div>
+						<div class="icon_box_1_title">복용이력 관리</div>
 						<div class="icon_box_1_text">
-							<p>Lorem ipsum dolor sit amet, adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat. Aliquam erat.</p>
+							<p>언제 무슨약을 복용하였는지 달력에 기록하여
+							<br> 자신의 복용이력을 쉽게 관리하실 수 있습니다 </p>
 						</div>
 					</div>
 				</div>
@@ -487,6 +491,7 @@
 					<div class="c_left_image d-flex flex-column align-items-center justify-content-center">
 						<img src="resources/images/pic_2.png" alt="">
 					</div>
+					
 				</div>
 			</div>
 		</div>
@@ -496,10 +501,10 @@
 
 	<footer class="footer">
 		<div class="footer_phone d-flex flex-row align-items-center justify-content-sm-end justify-content-center">
-			<div>Need Help? Call Us 24/7</div>
+			<div>궁금한 점이 있으세요??</div>
 			<div class="d-flex flex-row align-items-center justify-content-start">
 				<i class="fa fa-phone" aria-hidden="true"></i>
-				<div>652-345 3222 11</div>
+				<div>010-3314-5931</div>
 			</div>
 		</div>
 		<div class="footer_content">
@@ -508,18 +513,9 @@
 
 					<!-- Footer Column -->
 					<div class="col-xl-3 col-md-6">
-						<div class="footer_title">Hosting Packages</div>
-						<div class="footer_list">
-							<ul>
-								<li><a href="#">Cloud Hosting</a></li>
-								<li><a href="#">Web Hosting</a></li>
-								<li><a href="#">Reseller Hosting</a></li>
-								<li><a href="#">VPS Hosting</a></li>
-								<li><a href="#">Dedicated Servers</a></li>
-								<li><a href="#">Windows Hosting</a></li>
-								<li><a href="#">Linux Servers</a></li>
-							</ul>
-						</div>
+						<div class="home_icon ml-auto mr-auto d-flex flex-column align-items-center justify-content-center">
+						<div><img src="resources/images/logo.png" alt="https://www.flaticon.com/authors/srip"></div></div>
+					<div class="logo" style="padding-left: 30px"><a href="#"><span>약</span>팔이</a></div>
 					</div>
 
 					<!-- Footer Column -->
@@ -527,9 +523,9 @@
 						<div class="footer_title">Our Services</div>
 						<div class="footer_list">
 							<ul>
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">Logo Design</a></li>
-								<li><a href="#">Domains Register</a></li>
+								<li><a href="#">홈페이지 소개</a></li>
+								<li><a href="#">1:1 문의</a></li>
+								<li><a href="#">광고 문의</a></li>
 								<li><a href="#">Search Advertising</a></li>
 								<li><a href="#">Email Marketing</a></li>
 							</ul>
@@ -552,32 +548,24 @@
 
 					<!-- Footer Column -->
 					<div class="col-xl-3 col-md-6">
-						<div class="logo footer_logo"><a href="#"><span>b</span>Host</a></div>
+						<div class="logo footer_logo"><a href="#"><span>A</span>bout us</a></div>
 						<div class="footer_info">
 							<ul>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div><div>Address</div></div>
-									<div>1481 Creekside Lane Avila Beach, CA 931</div>
+									<div>경기도 의정부시 서부로 545 융합소프트웨어과 <br>심화과정</div>
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div><div>Phone</div></div>
-									<div>+53 345 7953 32453</div>
+									<div>010 3314 5931</div>
 								</li>
 								<li class="d-flex flex-row align-items-start justify-content-start">
 									<div><div>E-mail</div></div>
-									<div>yourmail@gmail.com</div>
+									<div>ekfto12@naver.com</div>
 								</li>
 							</ul>
 						</div>
-						<div class="cards">
-							<ul class="d-flex flex-row align-items-start justify-content-start flex-wrap">
-								<li><a href="#"><img src="resources/images/card_1.png" alt=""></a></li>
-								<li><a href="#"><img src="resources/images/card_2.png" alt=""></a></li>
-								<li><a href="#"><img src="resources/images/card_3.png" alt=""></a></li>
-								<li><a href="#"><img src="resources/images/card_4.png" alt=""></a></li>
-								<li><a href="#"><img src="resources/images/card_5.png" alt=""></a></li>
-							</ul>
-						</div>
+						
 						<div class="social footer_social">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
@@ -593,7 +581,7 @@
 			</div>
 		</div>
 		<div class="copyright_bar text-center"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This project is made with by <a href="" target="_blank">약팔이</a>
 <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></div>
 	</footer>
 </div>
