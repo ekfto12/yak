@@ -36,7 +36,7 @@
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li class="active"><a href="index.html">Home</a></li>
 								<li><a href="about.html">Search</a></li>
-								<li><a href="services.html">홈페이지 소개</a></li>
+								<li><a href="services.html">이재원 소개</a></li>
 								<li><a href="blog.html">문의</a></li>
 								<li><a href="contact.html">Contact</a></li>
 							</ul>
