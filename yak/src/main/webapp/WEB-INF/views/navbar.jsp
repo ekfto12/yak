@@ -59,7 +59,9 @@
 				<!-- Phone -->
 				<div class="phone d-flex flex-row align-items-center justify-content-start">
 					<i class="fa fa-power-off" aria-hidden="true"></i>
-					<div>Login</div>
+					<div>
+					<a href="/yak/join">Login</a>
+					</div>
 				</div>
 
 				<!-- Hamburger -->

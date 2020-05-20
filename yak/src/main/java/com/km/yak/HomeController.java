@@ -35,5 +35,27 @@ public class HomeController {
 		
 		return "home";
 	}
+
+	@RequestMapping("/join")
+    public String step1() throws Exception {
+        return "join_form";
+    }
 	
+	@RequestMapping("/login")
+    public String step2() throws Exception {
+        return "login_form";
+    }
+	
+	@RequestMapping("/about")
+    public String about() throws Exception {
+        return "about";
+    }
+	@RequestMapping("/contact")
+    public String contact() throws Exception {
+        return "contact";
+    }
+	@RequestMapping("/help")
+    public String help() throws Exception {
+        return "help";
+    }
 }
