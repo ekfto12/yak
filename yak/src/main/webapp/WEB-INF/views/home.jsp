@@ -7,7 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>약팔이2</title>
+<title>약팔이23</title>
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="description" content="BHost template project">
