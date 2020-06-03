@@ -58,4 +58,12 @@ public class HomeController {
     public String help() throws Exception {
         return "help";
     }
+	@RequestMapping("/mypage")
+    public String mypage() throws Exception {
+        return "mypage";
+    }
+	@RequestMapping("/search")
+    public String search() throws Exception {
+        return "search";
+    }
 }
