@@ -27,7 +27,7 @@
 
 	<header class="header trans_400">
 		<div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-			<div class="logo"><a href="#"><span>약</span>팔이</a></div>
+			<div class="logo"><a href="/yak"><span>약</span>팔이</a></div>
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-10 offset-lg-2">
@@ -35,11 +35,18 @@
 						
 						<nav class="main_nav">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
-								<li class="active"><a href="index.html">Home</a></li>
+								<li class="active"><a href="/yak">Home</a></li>
+								
 								<li><a href="/yak/search">Search</a></li>
 								<li><a href="/yak/about">홈페이지  소개</a></li>
+								<li class="nav-item dropdown">
+              					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">문의</a>
+              					<div class="dropdown-menu">
+                					<a class="dropdown-item" style="color:black" href="/yak/help">1:1 문의</a>
+                					<a class="dropdown-item" style="color:black" href="/yak/contact">광고 문의</a>
+             					 </div>
+          						  </li>
 								<li><a href="/yak/contact">문의</a></li>
-								<li><a href="contact.html">Contact</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -50,9 +57,9 @@
 				<!-- Header Links -->
 				<div class="header_links">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						<li><a href="#">Webmail</a></li>
-						<li><a href="#">Chat</a></li>
-						<li><a href="#">Login</a></li>
+						
+						<li style="color:white">000님 환영합니다</li>
+						<li><a href="/yak/mypage">Mypage</a></li>
 					</ul>
 				</div>
 
@@ -77,9 +84,15 @@
 			<div class="menu_nav trans_500">
 				<ul class="text-center">
 					<li><a href="/yak/search">Search</a></li>
-					<li><a href="/yak/about">홈페이지  소개</a></li>
-					<li><a href="/yak/contact">문의</a></li>
-					<li><a href="contact.html">Contact</a></li>
+								<li><a href="/yak/about">홈페이지  소개</a></li>
+								<li class="nav-item dropdown">
+              					<a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">문의</a>
+              					<div class="dropdown-menu">
+                					<a class="dropdown-item" style="color:black" href="/yak/help">1:1 문의</a>
+                					<a class="dropdown-item" style="color:black" href="/yak/contact">광고 문의</a>
+             					 </div>
+          						  </li>
+								<li><a href="/yak/contact">문의</a></li>
 				</ul>
 			</div>
 			<div class="phone menu_phone d-flex flex-row align-items-center justify-content-start">
@@ -92,8 +105,8 @@
 
 
 <script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/styles/bootstrap-4.1.2/popper.js"></script>
-<script src="resources/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
+
+<script src="resources/styles/bootstrap-4.1.2/bootstrap.js"></script>
 <script src="resources/plugins/greensock/TweenMax.min.js"></script>
 <script src="resources/plugins/greensock/TimelineMax.min.js"></script>
 <script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
