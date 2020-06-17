@@ -14,7 +14,7 @@
 	<link href="resources/plugins/video-js/video-js.css" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" type="text/css" href="resources/styles/about.css">
 	<link rel="stylesheet" type="text/css" href="resources/styles/about_responsive.css">
-	<link rel="stylesheet" href="resources/plugin.css">
+	<link rel="stylesheet" href="resources/css/plugin.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body>
