@@ -36,9 +36,9 @@
 						<nav class="main_nav">
 							<ul class="d-flex flex-row align-items-center justify-content-start">
 								<li class="active"><a href="index.html">Home</a></li>
-								<li><a href="about.html">Search</a></li>
-								<li><a href="services.html">홈페이지  소개</a></li>
-								<li><a href="blog.html">문의</a></li>
+								<li><a href="/yak/search">Search</a></li>
+								<li><a href="/yak/about">홈페이지  소개</a></li>
+								<li><a href="/yak/contact">문의</a></li>
 								<li><a href="contact.html">Contact</a></li>
 							</ul>
 						</nav>
@@ -76,10 +76,9 @@
 		<div class="menu_content d-flex flex-column align-items-center justify-content-center">
 			<div class="menu_nav trans_500">
 				<ul class="text-center">
-					<li><a href="index.html">Home</a></li>
-					<li><a href="about.html">Search</a></li>
-					<li><a href="services.html">홈페이지 소개</a></li>
-					<li><a href="blog.html">문의</a></li>
+					<li><a href="/yak/search">Search</a></li>
+					<li><a href="/yak/about">홈페이지  소개</a></li>
+					<li><a href="/yak/contact">문의</a></li>
 					<li><a href="contact.html">Contact</a></li>
 				</ul>
 			</div>
