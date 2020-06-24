@@ -8,7 +8,12 @@
 
 <meta charset="UTF-8">
 <title>약팔이</title>
+<meta charset="utf-8">
 <jsp:include page="navbar.jsp" />
+<link href="resources/css/main.css" rel="stylesheet" media="all">
+<link rel="stylesheet" type="text/css" href="resources/styles/services.css">
+<link rel="stylesheet" type="text/css" href="resources/styles/services_responsive.css">
+</head>
 <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700"
 	rel="stylesheet" />
 <link href="resources/css/search.css" rel="stylesheet" />

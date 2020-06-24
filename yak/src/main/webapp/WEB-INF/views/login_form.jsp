@@ -35,7 +35,7 @@
 				
 				<div class="form-group">
 					<button class="btn btn-secondary" id="submit_btn" type="submit">로그인</button>
-					<button class="btn btn-secondary join" type="button">회원가입</button>
+					<button class="btn btn-secondary join" type="button" onclick="location.href='join'">회원가입</button>
 					<button class="btn btn-danger" id="cancel_button" type="reset">취소</button>
 				</div>
 
