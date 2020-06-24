@@ -45,10 +45,7 @@
     <p class="card-text">자주 먹는 약들을 등록해 주세요</p>
   </div>
     <div class="card">
-        
-        <div>
-        <button id="add__new__list" type="button" class="btn btn-success position-absolute" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i>추가</button>
-        </div>
+
         <table class="table table-hover">
             <thead>
               <tr>
@@ -91,6 +88,11 @@
               </tr>
             </tbody>
           </table>
+          
+                  
+        <div>
+        <button id="add__new__list" type="button" class="btn btn-success position-absolute" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i>추가</button>
+        </div>
     </div>
 
 	<!-- Team -->
