@@ -27,7 +27,7 @@
 								<p>자신의 계정을 관리합니다.</p>
 							</div>
 						</div>
-						<div class="button extra_button"><a href="#">더보기</a></div>
+						<div class="button extra_button"><a href="account">더보기</a></div>
 					</div>
 				</div>
 	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
@@ -39,7 +39,7 @@
 								<p>자신이 자주 검색하는<br/> 의약품을 확인합니다.</p>
 							</div>
 						</div>
-						<div class="button extra_button"><a href="#">더보기</a></div>
+						<div class="button extra_button"><a href="favorite">더보기</a></div>
 					</div>
 				</div>
 	<div class="col-lg-4 col-md-4 col-sm-6 col-xs-12">
