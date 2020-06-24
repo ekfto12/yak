@@ -26,7 +26,7 @@
 
 </head>
 <body>
-	<div class="s010">
+	<div class="s010"  style="padding: 200px">
 		<form>
 			<div class="inner-form">
 				<div class="basic-search">

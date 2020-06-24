@@ -26,11 +26,9 @@
 						<div class="footer_title">Our Services</div>
 						<div class="footer_list">
 							<ul>
-								<li><a href="#">홈페이지 소개</a></li>
-								<li><a href="#">1:1 문의</a></li>
-								<li><a href="#">광고 문의</a></li>
-								<li><a href="#">Search Advertising</a></li>
-								<li><a href="#">Email Marketing</a></li>
+								<li><a href="about">홈페이지 소개</a></li>
+								<li><a href="help">1:1 문의</a></li>
+								<li><a href="contact">광고 문의</a></li>
 							</ul>
 						</div>
 					</div>
@@ -40,11 +38,8 @@
 						<div class="footer_title">Useful Links</div>
 						<div class="footer_list">
 							<ul>
-								<li><a href="#">About Us</a></li>
-								<li><a href="#">Testimonials</a></li>
-								<li><a href="#">Services</a></li>
-								<li><a href="#">News</a></li>
-								<li><a href="#">Contact</a></li>
+								<li><a href="about">About Us</a></li>
+								<li><a href="contact">Contact</a></li>
 							</ul>
 						</div>
 					</div>

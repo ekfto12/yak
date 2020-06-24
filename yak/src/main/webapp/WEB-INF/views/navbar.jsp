@@ -46,7 +46,6 @@
                 					<a class="dropdown-item" style="color:black" href="/yak/contact">광고 문의</a>
              					 </div>
           						  </li>
-								<li><a href="/yak/contact">문의</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -92,7 +91,7 @@
                 					<a class="dropdown-item" style="color:black" href="/yak/contact">광고 문의</a>
              					 </div>
           						  </li>
-								<li><a href="/yak/contact">문의</a></li>
+								
 				</ul>
 			</div>
 			<div class="phone menu_phone d-flex flex-row align-items-center justify-content-start">

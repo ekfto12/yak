@@ -97,17 +97,7 @@
 
 	
 
-	<div class="homeee">
-		<div class="container">
-			<div class="row">
-				<div class="col">
-					<div class="homeee_content">
-						<div class="homeee_image"><img src="resources/images/contact.png" alt=""></div>
-						<div class="homeee_title">광고 문의</div>		
-					</div>
-				</div>
-			</div>
-		</div>
+	<div  style="padding: 100px">
 	</div>
 
 	<!-- Footer -->
