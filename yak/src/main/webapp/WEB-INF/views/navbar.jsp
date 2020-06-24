@@ -105,8 +105,8 @@
 
 
 <script src="resources/js/jquery-3.2.1.min.js"></script>
-
-<script src="resources/styles/bootstrap-4.1.2/bootstrap.js"></script>
+<script src="resources/styles/bootstrap-4.1.2/popper.js"></script>
+<script src="resources/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
 <script src="resources/plugins/greensock/TweenMax.min.js"></script>
 <script src="resources/plugins/greensock/TimelineMax.min.js"></script>
 <script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
