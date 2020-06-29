@@ -16,6 +16,17 @@
 	<link rel="stylesheet" type="text/css" href="resources/styles/about_responsive.css">
 	<link rel="stylesheet" href="resources/css/plugin.css">
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<script>
+		$("#input-data").click(function() {
+			if(confirm("등록하시겠습니까?")) {
+				document.doList.action = "${path}/saveRecord";
+				document.doList.submit();
+			}
+		});
+		$("#").click(function() {
+			
+		});
+	</script>
 </head>
 <body>
 
@@ -104,20 +115,22 @@
 
 		<div class="main">
 			<div class="content-wrap">
-				<div class="content-left">
-					<div class="main-wrap">
-						<div id="main-day" class="main-day"></div>
-						<div id="main-date" class="main-date"></div>
-					</div>
-					<div class="todo-wrap">
-						<div class="todo-title">복용한 약 목록</div>
-						<div class="input-wrap">
-							<input type="text" placeholder="please write here!!" id="input-box" class="input-box">
-							<button type="button" id="input-data" class="input-data">INPUT</button>
-							<div id="input-list" class="input-list"></div>
+				<form name = "doList" action = "post">
+					<div class="content-left">
+						<div class="main-wrap">
+							<div id="main-day" class="main-day"></div>
+							<div id="main-date" class="main-date"></div>
+						</div>
+						<div class="todo-wrap">
+							<div class="todo-title">복용한 약 목록</div>
+							<div class="input-wrap">
+								<input type="text" placeholder="please write here!!" id="input-box" class="input-box">
+								<button type="button" id="input-data" class="input-data">INPUT</button>
+								<div id="input-list" class="input-list"></div>
+							</div>
 						</div>
 					</div>
-				</div>
+				</form>
 				<div class="content-right">
 					<table id="calendar" align="center">
 						<thead>
@@ -350,6 +363,9 @@
 						function deleteTodo(){
 							$div.remove();
 							$btn.remove();
+							document.doList.action = "${path}/delete";
+							document.doList.submit();
+							alert("삭제되었습니다.");
 						}
 					}
 				}

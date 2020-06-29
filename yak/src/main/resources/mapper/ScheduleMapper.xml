@@ -5,14 +5,17 @@
 
 <mapper namespace = "schedule">
 	<select id = "selectRecord" resultType = "com.km.yak.vo.ScheduleVO">
-		
+		SELECT * FROM management WHERE id = #{id}
+		ORDER BY num DESC
 	</select>
 	
 	<insert id="saveRecord">
-	
+		INSERT INTO management
+		VALUES (#{id}, #{text}, #{num}, #{date})
 	</insert>
 	
 	<delete id="deleteRecord">
-		
+		DELETE FROM management
+		WHERE num = #{num}
 	</delete>
 </mapper>

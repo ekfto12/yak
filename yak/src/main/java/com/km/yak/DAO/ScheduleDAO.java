@@ -1,5 +1,7 @@
 package com.km.yak.DAO;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -13,16 +15,16 @@ public class ScheduleDAO {
 	@Inject
 	private SqlSession sqlSession;
 	
-	public ScheduleVO selectRecord() {
+	public List<ScheduleVO> selectRecord(String date) {
 		//return sqlSession.selectRecord();
-		return null;
+		return sqlSession.selectList(date);
 	}
 	
-	public void saveRecord() {
-		
+	public void saveRecord(ScheduleVO vo) {
+		sqlSession.insert("saveRecord", vo);
 	}
 	
-	public void deleteRecord() {
-		
+	public void deleteRecord(int number) {
+		sqlSession.delete("deleteRecord", number);
 	}
 }
