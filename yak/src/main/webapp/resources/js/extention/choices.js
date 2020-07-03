@@ -137,7 +137,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	      position: 'auto',
 	      resetScrollPosition: true,
 	      regexFilter: null,
-	      shouldSort: true,
+	      shouldSort: false,
 	      shouldSortItems: false,
 	      sortFilter: _utils.sortByAlpha,
 	      placeholder: true,
@@ -2914,7 +2914,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	    include: [],
 
 	    // Whether to sort the result list, by score
-	    shouldSort: true,
+	    shouldSort: false,
 
 	    // The search function to use
 	    // Note that the default search function ([[Function]]) must conform to the following API:

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <!-- 맵핑될 DAO 인터페이스의 Full name 을 줍니다. -->
+ 
+<mapper namespace="drug"> 
+<!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 있습니다. -->
+		<!-- 01_01. 게시글 전체목록 조회 및 검색 조회까지 -->
+<select id="listAll" resultType="com.km.yak.vo.DrugVO">
+
+    SELECT 
+    	drug_name, d_route, d_shape, d_company
+    FROM 
+    	drug
+    WHERE
+    
+    <include refid="search"></include>
+    
+    <include refid="search5"></include>
+    
+    <include refid="search1"></include>
+    
+    <include refid="search2"></include>
+    
+    <include refid="search3"></include>
+    
+    <include refid="search4"></include>
+   
+    <include refid="search6"></include>
+    ORDER BY
+    	 drug_name asc
+    	  
+</select>
+ 
+<!-- 01_02. 게시글 레코드 갯수 -->
+<select id="countArticle" resultType="int">
+    SELECT 
+    	COUNT(*) 
+    FROM
+    	 drug
+    WHERE
+    <!-- WHERE절을 include 태그로 삽입 -->
+    <include refid="search"></include>
+    
+    <!-- WHERE절을 include 태그로 삽입 -->
+    <include refid="search5"></include>
+    
+    <include refid="search1"></include>
+    
+    <include refid="search2"></include>
+    
+    <include refid="search3"></include>
+    
+    <include refid="search4"></include>
+        <include refid="search6"></include>
+</select>
+
+<select id="drugRank" resultType="com.km.yak.vo.DrugVO">
+         <![CDATA[
+           select *
+		from
+(
+    select drug_name,
+            ROW_NUMBER() OVER (ORDER BY d_hit desc) asas
+            from drug
+)
+            where rownum <= 5
+         ]]>
+    </select>
+    
+<select id="drugDetail" resultType="com.km.yak.vo.DrugVO">
+        
+            SELECT
+               *
+            FROM
+                drug
+            WHERE
+                drug_name = #{drug_name}
+        
+    </select>
+    
+    <update id="updateHitDrug">
+        <![CDATA[
+            UPDATE
+                DRUG
+            SET
+                D_HIT = D_HIT + 1
+            WHERE
+                DRUG_NAME = #{ drug_name}
+        ]]>
+    </update>
+
+
+ 
+<!-- sql code 조각 -->
+<!-- 반복되는 sql의 일부를 sql태그를 이용하여 따로 빼둘수 있다. -->
+<sql id="search">
+    drug_name like '%'||#{keyword}||'%' and
+</sql>
+<sql id="search5">
+    effects like '%'||#{keyword2}||'%' and
+</sql>
+<sql id="search1">
+    <choose>
+        <!-- 검색옵션이 전체 검색일 경우 -->
+        <when test="searchOption1 == 'all'">
+            
+        </when>
+        <!-- 전체 검색이 아닐 경우 -->
+        <otherwise>
+             d_route like '%'||#{searchOption1}||'%' and
+        </otherwise>
+    </choose>
+</sql>
+<sql id="search2">
+    <choose>
+        <!-- 검색옵션이 전체 검색일 경우 -->
+        <when test="searchOption2 == 'all'">
+            
+        </when>
+        <!-- 전체 검색이 아닐 경우 -->
+        <otherwise>
+            d_shape like '%'||#{searchOption2}||'%' and
+        </otherwise>
+    </choose>
+</sql>
+<sql id="search3">
+    <choose>
+        <!-- 검색옵션이 전체 검색일 경우 -->
+        <when test="searchOption3 == 'all'">
+            
+        </when>
+        <!-- 전체 검색이 아닐 경우 -->
+        <otherwise>
+            d_category like '%'||#{searchOption3}||'%' and
+        </otherwise>
+    </choose>
+</sql>
+<sql id="search4">
+    d_company like '%'||#{keyword1}||'%' and
+</sql>
+
+<sql id="search6">
+    d_code like '%'||#{keyword3}||'%'
+</sql>
+</mapper>

@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>약팔이</title>
 
 <meta charset="utf-8">
@@ -37,11 +37,13 @@
 					<div class="col">
 						<div class="home_content text-center">
 							<div class="home_icon ml-auto mr-auto d-flex flex-column align-items-center justify-content-center"><div><img src="resources/images/logo.png" alt="https://www.flaticon.com/authors/srip"></div></div>
+							
 							<div class="home_title">Search the perfect drug</div>
 							<div class="domain_search">
 								<div class="domain_search_background"></div>
-								<form action="#" class="domain_search_form" id="domain_search_form">
-									<input type="text" class="domain_search_input" placeholder="원하는 의약품을 입력해주세요" required="required">
+								<form action="drug" class="domain_search_form" id="domain_search_form">
+									<!--  <input type="text" class="domain_search_input" placeholder="원하는 의약품을 입력해주세요" required="required"> -->
+									<input id="search" class="domain_search_input" type="text" name="keyword" placeholder="원하는 의약품을 입력해주세요 " value="${map.keyword}">
 									<div class="domain_search_dropdown d-flex flex-row align-items-center justify-content-center">
 										<div class="domain_search_selected"></div>
 										<ul>
@@ -50,7 +52,7 @@
 											<li>.net</li>
 										</ul>
 									</div>
-									<button class="domain_search_button">search</button>
+									<button type="submit" class="domain_search_button">search</button>
 								</form>
 							</div>
 						</div>
@@ -68,12 +70,17 @@
 				<div class="col">
 					<div class="domain_pricing_content">
 							<h1 style="text-align: center; padding-top: 30px;">가장 많이 검색된 의약품 Top 5</h1>
+						
 						<ul class="d-flex flex-md-row flex-column align-items-center justify-content-md-between justify-content-center">
-							<li><a href="#"><span>.</span>의약품<span>1</span></a></li>
-							<li><a href="#"><span>.</span>의약품<span>2</span></a></li>
-							<li><a href="#"><span>.</span>의약품<span>3</span></a></li>
-							<li><a href="#"><span>.</span>의약품<span>4</span></a></li>
-							<li><a href="#"><span>.</span>의약품<span>5</span></a></li>
+							
+							
+							<c:forEach items="${map.list}" var="row">
+							<li><a style="font-size: 20px;" href="drugDetail?drug_name=${row.drug_name}"><span>.</span>${row.drug_name}</a></li>
+                                
+                        </c:forEach>
+							
+							
+							
 						</ul>
 					</div>
 				</div>
@@ -152,18 +159,6 @@
 	<jsp:include page="footer.jsp" />
 </div>
 
-<script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/styles/bootstrap-4.1.2/popper.js"></script>
-<script src="resources/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
-<script src="resources/plugins/greensock/TweenMax.min.js"></script>
-<script src="resources/plugins/greensock/TimelineMax.min.js"></script>
-<script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="resources/plugins/greensock/animation.gsap.min.js"></script>
-<script src="resources/plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="resources/plugins/easing/easing.js"></script>
-<script src="resources/plugins/progressbar/progressbar.min.js"></script>
-<script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
-<script src="resources/js/custom.js"></script>
+
 </body>
 </html>

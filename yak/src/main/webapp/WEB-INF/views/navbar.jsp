@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 
 
 <!DOCTYPE html>
@@ -56,9 +55,13 @@
 				<!-- Header Links -->
 				<div class="header_links">
 					<ul class="d-flex flex-row align-items-center justify-content-start">
-						
-						<li style="color:white">000님 환영합니다</li>
+						<c:if test="${not empty authInfo.id}">
+						<li style="color:white">${authInfo.name}님 환영합니다</li>
 						<li><a href="/yak/mypage">Mypage</a></li>
+						</c:if>
+						<c:if test="${ empty authInfo.id}">
+						<li><a href="/yak/join_1">회원가입</a></li>
+						</c:if>
 					</ul>
 				</div>
 
@@ -66,7 +69,12 @@
 				<div class="phone d-flex flex-row align-items-center justify-content-start">
 					<i class="fa fa-power-off" aria-hidden="true"></i>
 					<div>
+					<c:if test="${empty authInfo.id}">
 					<a href="/yak/login">Login</a>
+					</c:if>
+					<c:if test="${not empty authInfo.id}">
+					<a href="/yak/logout">Logout</a>
+					</c:if>
 					</div>
 				</div>
 

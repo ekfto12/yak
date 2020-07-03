@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ page session="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +9,6 @@
 <title>약팔이</title>
 <meta charset="utf-8">
 <jsp:include page="navbar.jsp" />
-<link href="resources/css/main.css" rel="stylesheet" media="all">
 <link rel="stylesheet" type="text/css" href="resources/styles/services.css">
 <link rel="stylesheet" type="text/css" href="resources/styles/services_responsive.css">
 </head>
@@ -32,11 +30,11 @@
 </head>
 <body>
 	<div class="s010"  style="padding: 200px">
-		<form>
+		<form name="form1" method="post" action="drug">
 			<div class="inner-form">
 				<div class="basic-search">
 					<div class="input-field">
-						<input id="search" type="text" placeholder="제품명을 입력하세요 " />
+						<input id="search" type="text" name="keyword" placeholder="제품명을 입력하세요 " value="${map.keyword}">
 						<div class="icon-wrap">
 							<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
 								viewBox="0 0 24 24">
@@ -52,41 +50,42 @@
 						<div class="input-field">
 							<p style="padding-left: 10px">투여경로</p>
 							<div class="input-select">
-								<select data-trigger="" name="choices-single-defaul">
+								<select name="searchOption1" data-trigger="" name="choices-single-defaul">
 									<option placeholder="" value="">선택하세요</option>
-									<option>전체</option>
-									<option>주사</option>
-									<option>경구</option>
-									<option>코</option>
-									<option>항문</option>
-									<option>기타</option>
+									<option value="all" <c:out value="${map.searchOption1 == 'all'?'selected':''}"/> >전체</option>
+									<option value="주사" <c:out value="${map.searchOption1 == '주사'?'selected':''}"/> >주사</option>
+            						<option value="경구" <c:out value="${map.searchOption1 == '경구'?'selected':''}"/> >경구</option>
+            						<option value="코" <c:out value="${map.searchOption1 == '코'?'selected':''}"/> >코</option>
+            						<option value="항문" <c:out value="${map.searchOption1 == '항문'?'selected':''}"/> >항문</option>
+									<option value="기타" <c:out value="${map.searchOption1 == '기타'?'selected':''}"/> >기타</option>
 								</select>
 							</div>
 						</div>
 						<div class="input-field">
 							<p style="padding-left: 10px">제형</p>
 							<div class="input-select">
-								<select data-trigger="" name="choices-single-defaul">
+								<select name="searchOption2" data-trigger="" name="choices-single-defaul">
 									<option placeholder="" value="">선택하세요</option>
-									<option>전체</option>
-									<option>가글</option>
-									<option>시럽</option>
-									<option>연고</option>
-									<option>기타</option>
+									<option value="all" <c:out value="${map.searchOption2 == 'all'?'selected':''}"/> >전체</option>
+            						<option value="가글" <c:out value="${map.searchOption2 == '가글'?'selected':''}"/> >가글</option>
+            						<option value="시럽" <c:out value="${map.searchOption2 == '시럽'?'selected':''}"/> >시럽</option>
+            						<option value="연고" <c:out value="${map.searchOption2 == '연고'?'selected':''}"/> >연고</option>
+									<option value="기타" <c:out value="${map.searchOption2 == '기타'?'selected':''}"/> >기타</option>
 								</select>
 							</div>
 						</div>
 						<div class="input-field">
 							<p style="padding-left: 10px">식약처분류</p>
 							<div class="input-select">
-								<select data-trigger="" name="choices-single-defaul">
+								<select name="searchOption3" data-trigger="" name="choices-single-defaul">
 									<option placeholder="" value="">선택하세요</option>
-									<option>신경계감각기관용</option>
-									<option>개개의 기관계용</option>
-									<option>대사성</option>
-									<option>항병원생물성</option>
-									<option>치료를 주목적으로 하지 않는 의약품</option>
-									<option>마약</option>
+									<option value="all" <c:out value="${map.searchOption3 == 'all'?'selected':''}"/> >전체</option>
+            						<option value="신경계감각기관용" <c:out value="${map.searchOption3 == '신경계감각기관용'?'selected':''}"/> >신경계감각기관용</option>
+            						<option value="개개의 기관계용" <c:out value="${map.searchOption3 == '개개의 기관계용'?'selected':''}"/> >개개의 기관계용</option>
+            						<option value="대사성" <c:out value="${map.searchOption3 == '대사성'?'selected':''}"/> >대사성</option>
+									<option value="항병원생물성" <c:out value="${map.searchOption3 == '항병원생물성'?'selected':''}"/> >항병원생물성</option>
+									<option value="치료를 주목적으로 하지 않는 의약품" <c:out value="${map.searchOption3 == '치료를 주목적으로 하지 않는 의약품'?'selected':''}"/> >치료를 주목적으로 하지 않는 의약품</option>
+									<option value="기타" <c:out value="${map.searchOption3 == '기타'?'selected':''}"/> >기타</option>
 								</select>
 							</div>
 						</div>
@@ -95,19 +94,19 @@
 						<div class="textar">
 							<p style="padding-left: 10px">회사명</p>
 							<div class="textb">
-								<input type="text">
+								<input type="text" name="keyword1" value="${map.keyword1}">
 							</div>
 						</div>
 						<div class="textar">
 							<p style="padding-left: 10px">약품효과</p>
 							<div class="textb">
-								<input type="text">
+								<input type="text" name="keyword2" value="${map.keyword2}">
 							</div>
 						</div>
 						<div class="textar">
 							<p style="padding-left: 10px">약품코드</p>
 							<div class="textb">
-								<input type="text">
+								<input type="text" name="keyword3" value="${map.keyword3}">
 							</div>
 						</div>
 					</div>
@@ -133,13 +132,15 @@
 							
 							<div class="group-btn">
 								<button class="btn-delete" id="delete">RESET</button>
-								<button class="btn-search">SEARCH</button>
+								<button type="submit" class="btn-search">SEARCH</button>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
 		</form>
+		
+		
 	</div>
 	<jsp:include page="footer.jsp" />
 	<script src="resources/js/extention/choices.js"></script>
