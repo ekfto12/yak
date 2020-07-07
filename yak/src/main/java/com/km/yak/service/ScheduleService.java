@@ -22,9 +22,6 @@ public class ScheduleService implements iScheduleService {
 	
 	@Override
 	public void saveRecord(ScheduleVO vo) {
-		String text = vo.getText();
-		int number = vo.getNumber();
-		
 		scheduleDAO.saveRecord(vo);
 		return ;
 	}

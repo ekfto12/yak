@@ -2,6 +2,7 @@
 <html>
 <head>
 	<title>약팔이 - 복용관리</title>
+	<%@ include file = "../include/header.jsp" %>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="description" content="BHost template project">
@@ -18,13 +19,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 	<script>
 		$("#input-data").click(function() {
-			if(confirm("등록하시겠습니까?")) {
+			if(confirm("입력하시겠습니까?")) {
 				document.doList.action = "${path}/saveRecord";
 				document.doList.submit();
 			}
-		});
-		$("#").click(function() {
-			
 		});
 	</script>
 </head>
@@ -36,7 +34,7 @@
 
 		<header class="header trans_400">
 			<div class="header_content d-flex flex-row align-items-center justify-content-start trans_400">
-				<div class="logo"><a href="#"><span>약</span>팔이</a></div>
+				<div class="logo"><a href="#"><span>ì½</span>íì´</a></div>
 				<div class="container">
 					<div class="row">
 						<div class="col-lg-10 offset-lg-2">
@@ -57,9 +55,9 @@
 					<!-- Header Links -->
 					<div class="header_links">
 						<ul class="d-flex flex-row align-items-center justify-content-start">
-							<li><a href="#">웹메일</a></li>
-							<li><a href="#">채팅</a></li>
-							<li><a href="#">로그인</a></li>
+							<li><a href="#">ì¹ë©ì¼</a></li>
+							<li><a href="#">ì±í</a></li>
+							<li><a href="#">ë¡ê·¸ì¸</a></li>
 						</ul>
 					</div>
 
@@ -82,10 +80,10 @@
 				<div class="menu_nav trans_500">
 					<ul class="text-center">
 						<li><a href="index.html">Home</a></li>
-						<li><a href="about.html">카테고리</a></li>
-						<li><a href="services.html">의약품 검색</a></li>
-						<li><a href="blog.html">홈페이지 소개</a></li>
-						<li><a href="contact.html">문의</a></li>
+						<li><a href="about.html">ì¹´íê³ ë¦¬</a></li>
+						<li><a href="services.html">ìì½í ê²ì</a></li>
+						<li><a href="blog.html">ííì´ì§ ìê°</a></li>
+						<li><a href="contact.html">ë¬¸ì</a></li>
 					</ul>
 				</div>
 				<div class="phone menu_phone d-flex flex-row align-items-center justify-content-start">
@@ -122,7 +120,7 @@
 							<div id="main-date" class="main-date"></div>
 						</div>
 						<div class="todo-wrap">
-							<div class="todo-title">복용한 약 목록</div>
+							<div class="todo-title">ë³µì©í ì½ ëª©ë¡</div>
 							<div class="input-wrap">
 								<input type="text" placeholder="please write here!!" id="input-box" class="input-box">
 								<button type="button" id="input-data" class="input-data">INPUT</button>
@@ -348,7 +346,18 @@
 					var $div = document.createElement('div');
 					for(var i = 0; i < todoList[keyValue].length; i++){
 						var $div = document.createElement('div');
-						$div.textContent = '-' + todoList[keyValue][i];
+						function listRecord() {
+							$.ajax({
+								type: "get",
+								url: "${path}/listSelect?date=${date}",
+								success: function(result) {
+									for(var i an result) {
+										$div.textContent = '-' + result[i].text;
+									}
+								}
+							})
+						}
+						//$div.textContent = '-' + todoList[keyValue][i];
 						var $btn = document.createElement('button');
 						$btn.setAttribute('type', 'button'); 
 						$btn.setAttribute('id', 'del-ata');
@@ -396,6 +405,21 @@
 				inputBox.value = '';
 				$div.addEventListener('click',checkList);
 				$btn.addEventListener('click',deleteTodo);
+				$("#input-data").click(function() {
+					if(confirm("입력하시겠습니까?")) {
+						document.doList.action = "${path}/saveRecord";
+						document.doList.submit();
+						$.ajax({
+							type: "post",
+							url: "${path}/save",
+							data: $btn.innerHTML;
+							success: function() {
+								alert("저장되었습니다");
+								reshowingList();
+							}
+						});
+					};
+				});
 				function deleteTodo(){
 					$div.remove();
 					$btn.remove();
@@ -411,7 +435,7 @@
 
 		<footer class="footer">
 			<div class="footer_phone d-flex flex-row align-items-center justify-content-sm-end justify-content-center">
-				<div>도움이 필요하신가요?</div>
+				<div>ëìì´ íìíì ê°ì?</div>
 				<div class="d-flex flex-row align-items-center justify-content-start">
 					<i class="fa fa-phone" aria-hidden="true"></i>
 					<div>010-9208-5293</div>
@@ -467,7 +491,7 @@
 
 						<!-- Footer Column -->
 						<div class="col-xl-3 col-md-6">
-							<div class="logo footer_logo"><a href="#"><span>약</span>팔이</a></div>
+							<div class="logo footer_logo"><a href="#"><span>ì½</span>íì´</a></div>
 							<div class="footer_info">
 								<ul>
 									<li class="d-flex flex-row align-items-start justify-content-start">

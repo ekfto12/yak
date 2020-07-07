@@ -16,7 +16,6 @@ public class ScheduleDAO {
 	private SqlSession sqlSession;
 	
 	public List<ScheduleVO> selectRecord(String date) {
-		//return sqlSession.selectRecord();
 		return sqlSession.selectList(date);
 	}
 	
