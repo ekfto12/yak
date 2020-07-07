@@ -56,8 +56,4 @@ public class HomeController {
         return "account_change";
     }
 
-	@RequestMapping("/favorite")
-    public String favorite() throws Exception {
-        return "favorite";
-    }
 }

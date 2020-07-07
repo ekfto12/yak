@@ -14,4 +14,7 @@ public interface DrugService {
             String keyword2, String keyword3) throws Exception;
 	public DrugVO drugDetail(String name) throws Exception;
 	public List<DrugVO> drugRank() throws Exception;
+	public List<DrugVO> favorite(String id) throws Exception;
+	
+	
 }

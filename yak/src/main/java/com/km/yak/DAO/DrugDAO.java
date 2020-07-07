@@ -15,4 +15,5 @@ public interface DrugDAO {
 	public DrugVO drugDetail(String name) throws Exception;
 	public void updateHitDrug(String name) throws Exception;
 	public List<DrugVO> drugRank() throws Exception;
+	public List<DrugVO> favorite(String id) throws Exception;
 }

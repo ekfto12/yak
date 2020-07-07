@@ -4,6 +4,21 @@
  
 <mapper namespace="member"> 
 <!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 있습니다. -->
+
+		<insert id="add">
+			<![CDATA[
+            INSERT INTO MEMBER_F
+            (
+                DRUG_NAME,
+                ID
+            )
+            VALUES
+            (
+                #{drug_name},
+                #{id}
+            )
+        ]]>
+		</insert>
 		<insert id="register">
         <![CDATA[
             INSERT INTO MEMBER
@@ -48,4 +63,6 @@
               ID = #{id}       
       ]]>
     </select>
+    
+    
 </mapper>

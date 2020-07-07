@@ -67,6 +67,22 @@
          ]]>
     </select>
     
+    
+<select id="favorite" resultType="com.km.yak.vo.DrugVO">
+         <![CDATA[
+         select 
+    DISTINCT  *
+from 
+    member_f, drug
+where 
+    member_f.DRUG_NAME = drug.DRUG_NAME and
+id = #{id}
+
+          
+         ]]>
+    </select>
+    
+    
 <select id="drugDetail" resultType="com.km.yak.vo.DrugVO">
         
             SELECT

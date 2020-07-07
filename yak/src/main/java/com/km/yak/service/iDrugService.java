@@ -8,12 +8,14 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.km.yak.DAO.DrugDAO;
+import com.km.yak.DAO.MemberDAO;
 import com.km.yak.vo.DrugVO;
 
 @Service
 public class iDrugService implements DrugService{
 	@Inject
     DrugDAO drugDao;
+	
 	
 	// 05. 게시글 전체 목록 boardDAO.listAll메서드 호출
 	@Override
@@ -42,4 +44,12 @@ public class iDrugService implements DrugService{
 	public List<DrugVO> drugRank() throws Exception{
 		return drugDao.drugRank();
 	}
+	
+	@Override
+    public List<DrugVO> favorite(String id) throws Exception{
+        // TODO Auto-generated method stub
+		
+       // Map<String, Object> detail = drugDao.drugDetail(name);
+        return drugDao.favorite(id);
+    }
 }

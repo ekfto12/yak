@@ -1,5 +1,7 @@
 package com.km.yak.service;
 
+import java.util.List;
+
 import javax.annotation.Resource;
 
 import org.springframework.stereotype.Service;
@@ -11,6 +13,8 @@ import com.km.yak.exception.IdPasswordNotMatchingException;
 import com.km.yak.util.AuthInfo;
 import com.km.yak.util.LoginCommand;
 import com.km.yak.util.RegisterRequest;
+import com.km.yak.vo.DrugVO;
+import com.km.yak.vo.FavoriteVO;
 import com.km.yak.vo.MemberVO;
 
 
@@ -21,6 +25,7 @@ import com.km.yak.vo.MemberVO;
 public class iMemberService implements MemberService{
 	@Resource(name="memberDAO")
     private MemberDAO memberDAO;
+	
 	
 	@Override
     public AuthInfo loginAuth(LoginCommand loginCommand) throws Exception {
@@ -46,4 +51,11 @@ public class iMemberService implements MemberService{
         }
         memberDAO.insertUser(regReq);
     }
+	
+	@Override
+	public void favoriteAdd(FavoriteVO vo) throws Exception{
+		memberDAO.favoriteadd(vo);
+	}
+	
+	
 }

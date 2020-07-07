@@ -2,6 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 
 
 <!DOCTYPE html>
@@ -39,129 +40,148 @@
                                     <h6>
                                         ${map.eng_name}
                                     </h6>
-                                    <p class="proile-rating">조회수 : <span>8/10</span></p>
+                                    <p class="proile-rating">조회수 : <span>${map.d_hit}</span></p>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">
                                 <li class="nav-item">
-                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">About</a>
+                                    <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">전체</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Timeline</a>
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">효능·효과</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#dd" role="tab" aria-controls="dd" aria-selected="false">용법·용량</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#gita" role="tab" aria-controls="gita" aria-selected="false">기타</a>
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="col-md-2">
-                        <input type="submit" class="profile-edit-btn" name="btnAddMore" value="Edit Profile"/>
+                    <c:if test="${not empty authInfo.id}">
+                    <form action="favoriteAdd" method="post">
+                    	<input type="hidden" value="${map.drug_name}" type="text" name="drug_name" id="drug_name">
+						<input type="hidden" value="${authInfo.id}" type="text" name="id" id="id">
+						<button class="btn btn--radius btn--green" type="submit">즐겨찾기 추가</button>
+						
+						</form>
+						</c:if>
+						
+                        
                     </div>
                 </div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>WORK LINK</p>
-                            <a href="">Website Link</a><br/>
-                            <a href="">Bootsnipp Profile</a><br/>
-                            <a href="">Bootply Profile</a>
-                            <p>SKILLS</p>
-                            <a href="">Web Designer</a><br/>
-                            <a href="">Web Developer</a><br/>
-                            <a href="">WordPress</a><br/>
-                            <a href="">WooCommerce</a><br/>
-                            <a href="">PHP, .Net</a><br/>
+                            <p>페이지 이동</p>
+                            <a href="javascript:history.back(-1)">뒤로가기</a><br/>
+                            <a href="../yak/search">검색창으로 이동</a><br/>
                         </div>
                     </div>
                     <div class="col-md-8">
                         <div class="tab-content profile-tab" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>User Id</label>
+                                            <div class="col-md-2">
+                                                <label>성분</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti123</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Name</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>Kshiti Ghelani</p>
+                                            <div class="col-md-10">
+                                                <p>${map.ingredient}</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Email</label>
+                                            <div class="col-md-2">
+                                                <label>효능</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>kshitighelani@gmail.com</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Phone</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>123 456 7890</p>
+                                            <div class="col-md-10">
+                                                <p>${map.effects}</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Profession</label>
+                                            <div class="col-md-2">
+                                                <label>용법·용량</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>Web Developer and Designer</p>
+                                            <div class="col-md-10">
+                                                <p>${map.d_usage}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label>주의사항</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <p>${map.precautins}</p>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label>부작용</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <p>${map.side_effects}</p>
                                             </div>
                                         </div>
                             </div>
                             <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Experience</label>
+                                            <div class="col-md-2">
+                                                <label>효능</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
+                                            <div class="col-md-10">
+                                                <p>${map.effects}</p>
+                                            </div>
+                                        </div>
+                                        
+                                
+                            </div>
+                            <div class="tab-pane fade" id="dd" role="tabpanel" aria-labelledby="dd">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label>용법·용량</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <p>${map.d_usage}</p>
+                                            </div>
+                                        </div>
+                                        
+                                        
+                            </div>
+                            <div class="tab-pane fade" id="gita" role="tabpanel" aria-labelledby="gita">
+                                        <div class="row">
+                                            <div class="col-md-2">
+                                                <label>투여 경로</label>
+                                            </div>
+                                            <div class="col-md-10">
+                                                <p>${map.d_route}</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Hourly Rate</label>
+                                            <div class="col-md-2">
+                                                <label>제형</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>10$/hr</p>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Total Projects</label>
-                                            </div>
-                                            <div class="col-md-6">
-                                                <p>230</p>
+                                            <div class="col-md-10">
+                                                <p>${map.d_shape}</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>English Level</label>
+                                            <div class="col-md-2">
+                                                <label>식약처 분류</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>Expert</p>
+                                            <div class="col-md-10">
+                                                <p>${map.d_category}</p>
                                             </div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md-6">
-                                                <label>Availability</label>
+                                            <div class="col-md-2">
+                                                <label>회사명</label>
                                             </div>
-                                            <div class="col-md-6">
-                                                <p>6 months</p>
+                                            <div class="col-md-10">
+                                                <p>${map.d_company}</p>
                                             </div>
                                         </div>
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <label>Your Bio</label><br/>
-                                        <p>Your detail description</p>
-                                    </div>
-                                </div>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
                       

@@ -1,18 +1,30 @@
 package com.km.yak.controller;
 
+import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.km.yak.exception.AlreadyExistingEmailException;
 import com.km.yak.exception.AlreadyExistingIdException;
 import com.km.yak.service.MemberService;
+import com.km.yak.util.AuthInfo;
 import com.km.yak.util.RegisterRequest;
 import com.km.yak.util.RegisterRequestValidator;
+import com.km.yak.vo.DrugVO;
+import com.km.yak.vo.FavoriteVO;
+import javax.servlet.http.HttpSession;
+
 
 
 
@@ -57,4 +69,20 @@ public class MemberController {
         ModelAndView mv = new ModelAndView("join_form_3");
         return mv;
     }
+    
+    
+    @RequestMapping("/favoriteAdd")
+	public String favrit(FavoriteVO vo, HttpServletResponse response) throws Exception{
+		   memberSer.favoriteAdd(vo);
+		   response.setContentType("text/html; charset=UTF-8");
+		   PrintWriter writer = response.getWriter();    
+           writer.println("<script type='text/javascript'>");
+           writer.println("window.onload = function(){alert('즐겨찾기에 추가되었습니다'); history.go(-1);}");//alert 이후, URL 이동
+           writer.println("</script>"); 
+           writer.flush();
+          return null;
+	}
+    
+
+    
 }

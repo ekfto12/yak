@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import com.km.yak.util.RegisterRequest;
+import com.km.yak.vo.FavoriteVO;
 import com.km.yak.vo.MemberVO;
 
 
@@ -26,5 +27,9 @@ public class MemberDAO {
  
     public MemberVO selectById(String id) {
         return (MemberVO)sqlSession.selectOne("member.selectById", id);
+    }
+    
+    public void favoriteadd(FavoriteVO vo) {
+    	sqlSession.insert("member.add", vo);
     }
 }

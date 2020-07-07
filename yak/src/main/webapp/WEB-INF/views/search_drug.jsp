@@ -32,9 +32,9 @@
                         <thead>
                             <tr>
                                 <th>제품명</th>
-                                <th>회사명</th>
                                 <th>경로</th>
                                 <th>제형</th>
+                                <th>회사명</th>
                             </tr>
                         </thead>
                         <tbody>

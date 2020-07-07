@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.km.yak.service.DrugService;
+import com.km.yak.util.AuthInfo;
 import com.km.yak.util.CommandMap;
 import com.km.yak.vo.DrugVO;
 
@@ -70,11 +72,22 @@ public class DrugController {
     	mv.setViewName("detail_drug");
     	mv.addObject("map",drugService.drugDetail(drug_name));
     	return mv;
-
-        
-        
-        
     }
     
+    @RequestMapping(value="/favorite")
+    public ModelAndView fafa(HttpSession httpSession) throws Exception {
+        
+    	AuthInfo ss = (AuthInfo) httpSession.getAttribute("authInfo");
+    	String id = ss.getId();
+    	System.out.println(id);
+    	List<DrugVO> list = drugService.favorite(id);
+    	
+    	ModelAndView mv = new ModelAndView();
+    	Map<String, Object> map = new HashMap<String, Object>();
+    	map.put("list", list);
+    	mv.addObject("map", map); // 맵에 저장된 데이터를 mav에 저장
+	    mv.setViewName("favorite");
+    	return mv;
+    }
 
 }

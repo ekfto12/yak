@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,8 +15,6 @@
 <link rel="stylesheet" type="text/css" href="resources/styles/about_responsive.css">
 </head>
 <body>
-
-<div class="super_container">
 	
 	<!-- Header -->
 
@@ -42,50 +42,37 @@
 	<div class="container my-5">
        <div class="card-body text-center">
     <h4 class="card-title">즐겨찾기 목록</h4>
-    <p class="card-text">자주 먹는 약들을 등록해 주세요</p>
+    <p class="card-text">즐겨찾기한 의약품 리스트</p>
   </div>
     <div class="card">
  
         <table class="table table-hover">
             <thead>
               <tr>
-                <th scope="col">ID</th>
                 <th scope="col">약품명</th>
-                <th scope="col">질병</th>
-                <th scope="col">수정 삭제 </th>
-                <th scope="col">상세보기</th>
+                <th scope="col">경로</th>
+                <th scope="col">제형 </th>
+                <th scope="col">회사명</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                    <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>    
-                </td>
-                <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
-              </tr>
-              <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td>
-                    <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                    <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a>    
-                </td>
-                <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
-              </tr>
-              <tr>
-                <th scope="row">3</th>
-                <td colspan="2">Larry the Bird</td>
-                <td>       
-                    <a class="btn btn-sm btn-primary" href="#"><i class="far fa-edit"></i> edit</a>
-                    <a class="btn btn-sm btn-danger" href="#"><i class="fas fa-trash-alt"></i> delete</a> 
-                </td>
-                <td><a class="btn btn-sm btn-info" href="#"><i class="fas fa-info-circle"></i> Details</a> </td>
-              </tr>
+            <c:choose>
+                        <c:when test="${fn:length(map.list) > 0}">
+                        <c:forEach items="${map.list}" var="row">
+                            <tr>
+                            
+                                <td><a href="drugDetail?drug_name=${row.drug_name}">${row.drug_name}</a></td>
+                                <td>${row.d_route}</td>
+                                <td>${row.d_shape}</td>
+                                <td>${row.d_company}</td>
+                            </tr>
+                        </c:forEach>
+                        </c:when>
+                        <c:otherwise>
+                        <tr>
+                        	<td colspan="5" style="text-align: center;"> 조회된 결과가 없습니다.</td>
+                        </c:otherwise>
+                        </c:choose>
             </tbody>
           </table>
     </div>

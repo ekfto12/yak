@@ -62,5 +62,12 @@ public class iDrugDAO implements DrugDAO{
 	public List<DrugVO> drugRank() throws Exception{
 		return  SqlSession.selectList("drug.drugRank");
 	}
+	
+	@Override
+	public List<DrugVO> favorite(String id) throws Exception{
+		return  SqlSession.selectList("drug.favorite", id);
+	}
+	
+	
 
 }
