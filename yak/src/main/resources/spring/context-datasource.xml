@@ -6,8 +6,9 @@
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"/>
         <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"/>
-        <property name="username" value="lee"/>
-        <property name="password" value="lee"/>
+        <property name="username" value="yak"/>
+        <property name="password" value="yak"/>
     </bean>
+    <bean id="visitCountDAO" class="com.km.yak.DAO.VisitCountDAO"/>
     
 </beans>

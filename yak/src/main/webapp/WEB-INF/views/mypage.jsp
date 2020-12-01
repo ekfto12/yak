@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ page session="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,8 +11,15 @@
 <link href="resources/css/main.css" rel="stylesheet" media="all">
 <link rel="stylesheet" type="text/css" href="resources/styles/services.css">
 <link rel="stylesheet" type="text/css" href="resources/styles/services_responsive.css">
+
 </head>
 <body>
+<c:if test="${ empty authInfo.id}">
+<script>
+	alert("로그인 하신 후에 사용해주세요");
+	location.href="../yak/login";
+</script>
+</c:if>
 
 <div class="features">
 		<div class="container">
@@ -53,7 +59,7 @@
 								<p>자신이 복용하는 의약품을 <br/>관리합니다.</p>
 							</div>
 						</div>
-						<div class="button extra_button"><a href="#">더보기</a></div>
+						<div class="button extra_button"><a href="schedule">더보기</a></div>
 					</div>
 				</div>
 	</div>

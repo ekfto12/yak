@@ -15,12 +15,17 @@
 <link rel="stylesheet" type="text/css" href="resources/styles/about_responsive.css">
 </head>
 <body>
-	
+<c:if test="${empty authInfo.id}">
+<script>
+	alert(${authInfo.id});
+	location.href="../yak/login";
+</script>
+</c:if>
 	<!-- Header -->
 
 	
 
-	
+	<div class="super_container">
 
 	<!-- Home -->
 
@@ -76,35 +81,12 @@
             </tbody>
           </table>
     </div>
-       
-        <div>
-        <button id="add__new__list" type="button" class="btn btn-success position-absolute" data-toggle="modal" data-target=".bd-example-modal-lg"><i class="fas fa-plus"></i>추가</button>
-        </div>
-	<!-- Team -->
-
-	
-
-	<div  style="padding: 100px">
+    </div>   
+<div  style="padding: 100px">
 	</div>
-
-	<!-- Footer -->
 <jsp:include page="footer.jsp" />
 	
 </div>
-<script src="resources/js/jquery-3.2.1.min.js"></script>
-<script src="resources/styles/bootstrap-4.1.2/popper.js"></script>
-<script src="resources/styles/bootstrap-4.1.2/bootstrap.min.js"></script>
-<script src="resources/plugins/greensock/TweenMax.min.js"></script>
-<script src="resources/plugins/greensock/TimelineMax.min.js"></script>
-<script src="resources/plugins/scrollmagic/ScrollMagic.min.js"></script>
-<script src="resources/plugins/greensock/animation.gsap.min.js"></script>
-<script src="resources/plugins/greensock/ScrollToPlugin.min.js"></script>
-<script src="resources/plugins/OwlCarousel2-2.2.1/owl.carousel.js"></script>
-<script src="resources/plugins/easing/easing.js"></script>
-<script src="resources/plugins/progressbar/progressbar.min.js"></script>
-<script src="resources/plugins/parallax-js-master/parallax.min.js"></script>
-<script src="resources/plugins/video-js/video.min.js"></script>
-<script src="resources/plugins/video-js/Youtube.min.js"></script>
-<script src="resources/js/about.js"></script>
+
 </body>
 </html>

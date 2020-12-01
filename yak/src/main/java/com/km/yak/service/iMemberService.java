@@ -57,5 +57,8 @@ public class iMemberService implements MemberService{
 		memberDAO.favoriteadd(vo);
 	}
 	
-	
+	@Override
+	   public MemberVO selectMember (String id) {
+	      return memberDAO.selectById(id);
+	   }
 }

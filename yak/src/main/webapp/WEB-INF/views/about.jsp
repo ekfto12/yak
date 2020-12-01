@@ -55,7 +55,10 @@
 					<div class="about_content">
 						<div class="section_title"><h2>What we do @ 약팔이</h2></div>
 						<div class="about_text">
-							<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris velit arcu, scelerisque dignissim massa quis, mattis facilisis erat. Aliquam erat volutpat. Sed efficitur diam ut interdum ultricies. In a leo vel dolor tempor feugiat. Cras accumsan faucibus magna a imperdiet. Donec mi neque, pretium eu quam at, facilisis venenatis tortor. Suspendisse potenti.</p>
+							<p>약팔이 사이트는 고객님들이 약의 이름, 효능 및 부작용 등의 약 정보를 확인 할 수 있는 사이트 입니다<br/>
+그리고 자주 복용하는 약품들을 즐겨찾기 등록 할 수 있으며 복용관리 서비스를 고객님들께 제공합니다<br/>
+
+약팔이 사이트는 공익을 추구하기 위한 사이트입니다 감사합니다</p>
 						</div>
 					</div>
 				</div>

@@ -21,7 +21,7 @@
 		</insert>
 		<insert id="register">
         <![CDATA[
-            INSERT INTO MEMBER
+            INSERT INTO MEMBERR
             (
                 ID,
                 PW,
@@ -47,7 +47,7 @@
               EMAIL,
               NAME
           FROM
-              MEMBER
+              MEMBERR
           WHERE
               EMAIL = #{email}       
       ]]>
@@ -58,7 +58,7 @@
           SELECT
               *
           FROM
-              MEMBER
+              MEMBERR
           WHERE
               ID = #{id}       
       ]]>

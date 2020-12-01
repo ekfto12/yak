@@ -23,6 +23,8 @@ import com.km.yak.util.RegisterRequest;
 import com.km.yak.util.RegisterRequestValidator;
 import com.km.yak.vo.DrugVO;
 import com.km.yak.vo.FavoriteVO;
+import com.km.yak.vo.MemberVO;
+
 import javax.servlet.http.HttpSession;
 
 
@@ -82,6 +84,18 @@ public class MemberController {
            writer.flush();
           return null;
 	}
+    
+    @RequestMapping("/modify")
+    public ModelAndView mdofiy(HttpSession session) {
+    	AuthInfo ss = (AuthInfo) session.getAttribute("authInfo");
+    	String id = ss.getId();
+       MemberVO vo = memberSer.selectMember(id);
+       
+       ModelAndView mov = new ModelAndView();
+       mov.setViewName("modify_form");
+       mov.addObject("vo", vo);
+       return mov;
+    }
     
 
     
