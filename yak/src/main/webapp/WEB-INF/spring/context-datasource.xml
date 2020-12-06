@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
  
     <bean id="dataSourceSpied" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -10,14 +11,5 @@
         <property name="password" value="1234"/>
     </bean>
     
-    <bean id="dataSource" class="net.sf.log4jdbc.Log4jdbcProxyDataSource">
-        <constructor-arg ref="dataSourceSpied" />
-        <property name="logFormatter">
-            <bean class="net.sf.log4jdbc.tools.Log4JdbcCustomFormatter">
-                <property name="loggingType" value="MULTI_LINE" />
-                <property name="sqlPrefix" value="[   SQL   ]  :  "/>
-            </bean>
-        </property>
-    </bean>
     
 </beans>

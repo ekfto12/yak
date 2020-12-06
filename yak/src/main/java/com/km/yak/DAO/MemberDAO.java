@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import com.km.yak.util.RegisterRequest;
 import com.km.yak.vo.FavoriteVO;
 import com.km.yak.vo.MemberVO;
+import com.km.yak.vo.VisitCountVO;
 
 
 
@@ -31,5 +32,9 @@ public class MemberDAO {
     
     public void favoriteadd(FavoriteVO vo) {
     	sqlSession.insert("member.add", vo);
+    }
+    public void visit() {
+    	System.out.println("as");
+    	sqlSession.insert("visit.insertvisit");
     }
 }

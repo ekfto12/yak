@@ -5,10 +5,10 @@
 <!-- id 속성은 DAO 의 메소드와 같아야 한다. 여기의 boardVO 는 mybatis-confg.xml 에 Alias 되어 있습니다. -->
 
 		<insert id="insertvisit">
-            INSERT
+		INSERT
             INTO VISITOR
             (
-                VISIT_ID,
+            	VISIT_ID,
                 VISIT_IP,
                 VISIT_TIME,
                 <if test="visit_refer != null and visit_refer !=''">
@@ -18,15 +18,18 @@
             )
             VALUES
             (
-                VISITOR_SEQ.NEXTVAL,
+                VISITOR_NUM.NEXTVAL,
                 #{visit_ip},
-                SYSDATETIME,
+                to_char(sysdate, 'YYYY-MM-DD HH24:MI:SS'),
                 <if test="visit_refer != null and visit_refer !=''">
                 #{visit_refer},
                 </if>
                 #{visit_agent}
             )
         </insert>
-    
+        
+    <update id="toady" >
+		update today_visitor set today = #{count}
+	</update>
     
 </mapper>

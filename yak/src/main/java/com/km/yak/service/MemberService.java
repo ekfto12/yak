@@ -14,5 +14,5 @@ public interface MemberService {
 	AuthInfo loginAuth(LoginCommand loginCommand) throws Exception;
 	void favoriteAdd(FavoriteVO vo) throws Exception;
 	MemberVO selectMember(String id);
-	
+	void getVisitTodayCount() throws Exception;
 }

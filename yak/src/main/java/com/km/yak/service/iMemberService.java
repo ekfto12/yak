@@ -3,6 +3,9 @@ package com.km.yak.service;
 import java.util.List;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSessionEvent;
+import javax.servlet.http.HttpSessionListener;
 
 import org.springframework.stereotype.Service;
 
@@ -61,4 +64,9 @@ public class iMemberService implements MemberService{
 	   public MemberVO selectMember (String id) {
 	      return memberDAO.selectById(id);
 	   }
+	
+	@Override
+		public void getVisitTodayCount() throws Exception{
+		memberDAO.visit();
+	}
 }

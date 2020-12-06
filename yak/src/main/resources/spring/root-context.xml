@@ -34,7 +34,7 @@
 		class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
 		<property name="dataSource" ref="dataSource" />
 	</bean> <!-- 아노테이션 기반의 트랜잭션을 사용합니다. -->
-	<bean id="visitCountDAO" class="com.km.yak.DAO.VisitCountDAO"/>
+	
 	<tx:annotation-driven
 		transaction-manager="transactionManager" />
 </beans>

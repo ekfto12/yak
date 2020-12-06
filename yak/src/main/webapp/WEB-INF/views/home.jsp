@@ -1,3 +1,4 @@
+<%@page import="com.km.yak.util.SessionListener"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -30,6 +31,7 @@
 	<!-- Home -->
 
 	<div class="home">
+	
 		<div class="parallax_background parallax-window" data-parallax="scroll" data-image-src="resources/images/index.jpg" data-speed="0.8"></div>
 		<div class="home_container">
 			<div class="container">
@@ -70,7 +72,7 @@
 				<div class="col">
 					<div class="domain_pricing_content">
 							<h1 style="text-align: center; padding-top: 30px;">가장 많이 검색된 의약품 Top 5</h1>
-						
+						현재접속자수 :
 						<ul class="d-flex flex-md-row flex-column align-items-center justify-content-md-between justify-content-center">
 							
 							
@@ -89,7 +91,11 @@
 	</div>
 
 	<!-- Why Choose Us -->
-
+<c:forEach items="${map.listt}" var="row">
+									<c:if test="${row.state eq 'main'}">
+                                <img style="margin-bottom: 10px; border-radius: 0%" alt="User Picture" src="/picture${row.img_dirr}" class="img-circle img-responsive">
+                        			</c:if>
+                        </c:forEach>
 	<div class="why">
 		<div class="container">
 			<div class="row">
