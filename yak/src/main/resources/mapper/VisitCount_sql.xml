@@ -14,7 +14,8 @@
                 <if test="visit_refer != null and visit_refer !=''">
                 VISIT_REFER,
                 </if>
-                VISIT_AGENT
+                VISIT_AGENT,
+                VISIT_TIMEE
             )
             VALUES
             (
@@ -24,7 +25,8 @@
                 <if test="visit_refer != null and visit_refer !=''">
                 #{visit_refer},
                 </if>
-                #{visit_agent}
+                #{visit_agent},
+                to_char(sysdate, 'YYYY-MM-DD')
             )
         </insert>
         

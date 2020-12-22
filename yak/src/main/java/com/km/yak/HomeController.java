@@ -47,10 +47,7 @@ public class HomeController {
     public String mypage() throws Exception {
         return "mypage";
     }
-	@RequestMapping("/search")
-    public String search() throws Exception {
-        return "search";
-    }
+	
 	@RequestMapping("/account")
     public String account() throws Exception {
         return "account_change";

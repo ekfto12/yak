@@ -12,7 +12,18 @@
           FROM
               BANNER
           WHERE
-              STATE = 'main' or STATE = 'search'
+              STATE = 'main'
+      ]]>
+    </select>
+    
+    <select id="banner_search" resultType="com.km.yak.vo.BannerVO">
+        <![CDATA[
+          SELECT
+              *
+          FROM
+              BANNER
+          WHERE
+              STATE = 'search'
       ]]>
     </select>
     

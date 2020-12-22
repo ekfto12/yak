@@ -29,6 +29,11 @@
 
 </head>
 <body>
+						<c:forEach items="${map.listt}" var="row">
+									<c:if test="${row.state eq 'search'}">
+                                <img style="margin-bottom: 10px; border-radius: 0%" alt="User Picture" src="/picture${row.img_dir}" class="img-circle img-responsive">
+                        			</c:if>
+                        </c:forEach>
 	<div class="s010"  style="padding: 200px">
 		<form name="form1" method="post" action="drug">
 			<div class="inner-form">

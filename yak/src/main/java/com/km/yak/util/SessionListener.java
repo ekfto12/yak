@@ -43,7 +43,7 @@ public class SessionListener implements HttpSessionListener{
 		// 세션이 만들어질 때 호출
 		HttpSession session = event.getSession(); // request에서 얻는 session과 동일한 객체
 		session.setMaxInactiveInterval(60 * 20);
-
+		System.out.println(session);
 		count++;
 
 		session.getServletContext().log(session.getId() + " 세션생성 " + ", 접속자수 : " + count);

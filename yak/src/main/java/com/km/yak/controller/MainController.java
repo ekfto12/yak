@@ -8,6 +8,7 @@ import java.util.Locale;
 import java.util.Map;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,4 +43,32 @@ public class MainController {
 	    
 		return mav;
 	}
+	
+	@RequestMapping("/search")
+	public ModelAndView search(Model model) throws Exception{
+		
+
+		List<BannerVO> listt = bannerService.getBanner_s();
+		System.out.println(listt);
+		ModelAndView mav = new ModelAndView();
+		Map<String, Object> map = new HashMap<String, Object>();
+	    map.put("listt", listt);
+	    mav.addObject("map", map); // 맵에 저장된 데이터를 mav에 저장
+	    mav.setViewName("search");
+	    
+		return mav;
+	}
+	
+	@RequestMapping(value = "/close", method = RequestMethod.POST)
+	public String close(HttpSession session) throws Exception{
+		//boolean b_new = session.isNew();
+		if(session == null) {
+			System.out.println("ㅎㅇ");
+		}else {
+			session.invalidate();
+			System.out.println("ㅂㅇ");
+		}
+		return null;
+	}
+	
 }

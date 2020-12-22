@@ -18,4 +18,8 @@ public class iBannerService implements BannerService{
 	public List<BannerVO> getBanner() throws Exception{
 		return bannerDAO.bannerSearch();
 	}
+	@Override
+	public List<BannerVO> getBanner_s() throws Exception{
+		return bannerDAO.bannerSearch_s();
+	}
 }

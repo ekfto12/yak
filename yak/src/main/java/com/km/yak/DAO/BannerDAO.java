@@ -18,4 +18,8 @@ public class BannerDAO {
 	public List<BannerVO> bannerSearch() throws Exception{
 		return sqlSession.selectList("banner.bannerGet");
 	}
+	
+	public List<BannerVO> bannerSearch_s() throws Exception{
+		return sqlSession.selectList("banner.banner_search");
+	}
 }

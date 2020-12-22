@@ -22,6 +22,20 @@
 <link rel="stylesheet" type="text/css" href="resources/plugins/OwlCarousel2-2.2.1/animate.css">
 <link rel="stylesheet" type="text/css" href="resources/styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="resources/styles/responsive.css">
+<script type="text/javascript" src="//code.jquery.com/jquery-3.4.1.js"></script>
+<script type="text/javascript">
+    $(window).on("beforeunload", function () {
+    	$.ajax({ 
+        	type: "POST", 
+        	url: "close", 
+        	async: false 
+        	}); 
+    	return;
+
+    });
+</script>
+
+
 </head>
 <body>
 
@@ -72,7 +86,7 @@
 				<div class="col">
 					<div class="domain_pricing_content">
 							<h1 style="text-align: center; padding-top: 30px;">가장 많이 검색된 의약품 Top 5</h1>
-						현재접속자수 :
+						
 						<ul class="d-flex flex-md-row flex-column align-items-center justify-content-md-between justify-content-center">
 							
 							
@@ -93,7 +107,7 @@
 	<!-- Why Choose Us -->
 <c:forEach items="${map.listt}" var="row">
 									<c:if test="${row.state eq 'main'}">
-                                <img style="margin-bottom: 10px; border-radius: 0%" alt="User Picture" src="/picture${row.img_dirr}" class="img-circle img-responsive">
+                                <img style="margin-bottom: 10px; border-radius: 0%" alt="User Picture" src="/picture${row.img_dir}" class="img-circle img-responsive">
                         			</c:if>
                         </c:forEach>
 	<div class="why">
